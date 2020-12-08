@@ -1,9 +1,5 @@
 #!/bin/sh
 
-# Start the SSH agent and load key.
-source agent-start "$GITHUB_ACTION"
-echo "$INPUT_REMOTE_KEY" | agent-add
-
 # Add strict errors.
 set -eu
 
