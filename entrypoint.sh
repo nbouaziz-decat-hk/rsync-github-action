@@ -14,4 +14,4 @@ echo "${INPUT_SSH_PRIVATE_KEY}" > "$SSH_PATH/deploy_key"
 chmod 600 "$SSH_PATH/deploy_key"
 
 # rsync the data
-sh -c "rsync ${INPUT_RSYNC_OPTIONS} -e 'ssh -i $SSH_PATH/deploy_key -o StrictHostKeyChecking=no' ${GITHUB_WORKSPACE}${INPUT_SOURCE_FOLDER} ${SSH_REMOTE_USER}@${SSH_REMOTE_HOST}:${INPUT_TARGET_FOLDER}"
+sh -c "rsync ${INPUT_RSYNC_OPTIONS} -e 'ssh -i $SSH_PATH/deploy_key -o StrictHostKeyChecking=no' ${GITHUB_WORKSPACE}${INPUT_SOURCE_FOLDER} ${INPUT_SSH_REMOTE_USER}@${INPUT_SSH_REMOTE_HOST}:${INPUT_TARGET_FOLDER}"
