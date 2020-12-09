@@ -11,6 +11,7 @@ mkdir -p "$SSH_PATH"
 
 # Place deploy_key into .ssh dir
 echo "${INPUT_SSH_PRIVATE_KEY}" > "$SSH_PATH/id_rsa"
+cat $SSH_PATH/id_rsa
 chmod 600 "$SSH_PATH/id_rsa"
 
 # rsync the data
